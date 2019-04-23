@@ -2,7 +2,7 @@ const dogs = async function (breed) {
   const dogsAPI = `https://dog.ceo/api/breed/${breed}/images/random/20`;
   const dogs = await fetch(dogsAPI);
   const json = await dogs.json();
-  console.log(json.message);  
+  return json.message;  
 }
 
 const dogList = async function() {
@@ -11,9 +11,6 @@ const dogList = async function() {
   const json = await list.json();
   console.log(json);
 }
-
-dogs('hound');
-dogList();
 
 export { dogs, dogList };
 

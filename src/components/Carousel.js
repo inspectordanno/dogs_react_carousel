@@ -3,12 +3,11 @@ import Coverflow from 'react-coverflow';
 import { dogs } from './api';
 
 const Carousel = (props) => {
+
   const createImgs = () => {
-    this.props.pictures.forEach((picture) => {
-      return (
-        <img src={picture} alt="dog"/>
-      );
-    });
+    props.pictures.map((picture) => (
+      <img src={picture} alt="dog"/>
+    ));
   };
 
   return (

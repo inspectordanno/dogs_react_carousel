@@ -1,7 +1,6 @@
 import React from 'react';
 import { dogs } from './api';
 import Carousel from './Carousel';
-import DropDown from './Dropdown';
 
 export default class DogApp extends React.Component {
 
@@ -22,10 +21,13 @@ export default class DogApp extends React.Component {
     }));
   };
 
+  componentDidMount() {
+    this.handlePictures();
+  }
+
   render() {
     return (
       <Carousel pictures={this.state.pictures} />
-      <DropDown />
     );
   }
 }
