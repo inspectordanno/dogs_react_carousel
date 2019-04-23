@@ -28,6 +28,8 @@ export default class DogApp extends React.Component {
   render() {
     return (
       <Carousel pictures={this.state.pictures} />
+      //pass state up 
+      {/* <Dropdown breed={this.handleBreed(breed)} /> */}
     );
   }
 }
