@@ -15,21 +15,31 @@ export default class DogApp extends React.Component {
     }));
   };
 
-  handlePictures() {
+  async handlePictures() {
+    const pictures = await dogs(this.state.breed);
     this.setState(() => ({
-      pictures: dogs(this.state.breed)
+      pictures
     }));
   };
+
+  createIMGs() {
+    return this.state.pictures.map((picture, i) => (
+      <img key={i} src={picture} alt="dog"/>
+    ));
+  };
+
 
   componentDidMount() {
     this.handlePictures();
   }
 
   render() {
+    if (!this.state.pictures.length) {
+      return null;
+    }
+
     return (
-      <Carousel pictures={this.state.pictures} />
-      //pass state up 
-      {/* <Dropdown breed={this.handleBreed(breed)} /> */}
-    );
+      <div>{this.createIMGs()}</div>
+    )
   }
 }
