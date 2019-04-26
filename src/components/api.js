@@ -8,8 +8,10 @@ const dogs = async function (breed) {
 const dogList = async function() {
   const api = 'https://dog.ceo/api/breeds/list/all';
   const list = await fetch(api);
+  console.log('list: ', list)
   const json = await list.json();
-  console.log(json);
+  console.log("jsonjson: ", json);
+  return Object.keys(json.message);
 }
 
 export { dogs, dogList };
