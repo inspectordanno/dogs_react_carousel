@@ -22,6 +22,13 @@ export default class DogApp extends React.Component {
     }));
   };
 
+  async handleDogList() {
+    const dogBreeds = await dogList();
+    this.setState(() => ({
+      dogBreeds
+    }));
+  }
+
   createIMGs() {
     return this.state.pictures.map((picture, i) => (
       <img key={i} src={picture} alt="dog"/>
@@ -39,7 +46,10 @@ export default class DogApp extends React.Component {
     }
 
     return (
-      <div>{this.createIMGs()}</div>
+      <div>
+        // <Select options={this.state.pictures}
+        {this.createIMGs()}
+      </div>
     )
   }
 }
