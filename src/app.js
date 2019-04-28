@@ -6,7 +6,6 @@ import ReactDOM from 'react-dom';
 // import 'normalize.css/normalize.css';
 // import './styles/styles.scss';
 import DogApp from './components/DogApp';
-import { createStore, applyMiddleware } from 'redux';
 
 // const store = configureStore();
 // const state = store.getState();
